@@ -1,0 +1,57 @@
+/* =========================
+   ZORO PS5 OVERLAY
+   ========================= */
+
+.controller.custom,
+.controller.edit {
+    background-image:
+        url("https://i.imgur.com/YOUR_ZORO_CONTROLLER.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* GREEN GLOW */
+
+.controller.edit {
+    filter:
+        drop-shadow(0 0 18px rgba(0,255,120,.25));
+}
+
+/* JOYSTICKS */
+
+.stick {
+    filter:
+        drop-shadow(0 0 10px rgba(0,255,100,.55));
+}
+
+/* BUTTONS */
+
+.button.pressed {
+    transform: scale(.93);
+    filter:
+        brightness(1.4)
+        drop-shadow(0 0 14px rgba(0,255,120,.85));
+}
+
+/* DPAD */
+
+.dpad .pressed {
+    filter:
+        brightness(1.5)
+        drop-shadow(0 0 15px rgba(120,255,120,.9));
+}
+
+/* TRIGGERS */
+
+.trigger-button.pressed {
+    filter:
+        brightness(1.25)
+        drop-shadow(0 0 14px rgba(0,255,120,.7));
+}
+
+/* PS BUTTON */
+
+.meta.pressed {
+    filter:
+        drop-shadow(0 0 12px rgba(120,255,120,.9));
+}
