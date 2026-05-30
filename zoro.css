@@ -1,55 +1,52 @@
 /* =========================
-   ZORO PS5 OVERLAY
+   ZORO FULL PS5 SKIN
    ========================= */
 
-.controller.custom,
-.controller.edit {
-    background-image: url("https://aleeexrl.github.io/gamepadstest/zoro.png") !important;
-    background-size: contain !important;
-    background-repeat: no-repeat !important;
-    background-position: center center !important;
+.custom {
+    background-image:
+    url("https://aleeexrl.github.io/gamepadstest/zoro.png");
+
+    width: 1000px;
+    height: 600px;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
 }
 
-/* GREEN GLOW */
+/* REMOVE DEFAULT BG */
 
-.controller.edit {
-    filter: drop-shadow(0 0 18px rgba(0,255,120,.25));
+.controller {
+    background: transparent !important;
 }
 
-/* JOYSTICKS */
-
-.stick {
-    filter: drop-shadow(0 0 10px rgba(0,255,100,.55));
-}
-
-/* BUTTONS */
+/* BUTTON EFFECTS */
 
 .button.pressed {
-    transform: scale(.93);
     filter:
-        brightness(1.4)
-        drop-shadow(0 0 14px rgba(0,255,120,.85));
+    brightness(1.5)
+    drop-shadow(0 0 12px rgba(0,255,120,.9));
+}
+
+/* STICKS */
+
+.stick {
+    filter:
+    drop-shadow(0 0 10px rgba(0,255,100,.55));
 }
 
 /* DPAD */
 
 .dpad .pressed {
     filter:
-        brightness(1.5)
-        drop-shadow(0 0 15px rgba(120,255,120,.9));
+    brightness(1.5)
+    drop-shadow(0 0 14px rgba(120,255,120,.9));
 }
 
 /* TRIGGERS */
 
 .trigger-button.pressed {
     filter:
-        brightness(1.25)
-        drop-shadow(0 0 14px rgba(0,255,120,.7));
-}
-
-/* PS BUTTON */
-
-.meta.pressed {
-    filter:
-        drop-shadow(0 0 12px rgba(120,255,120,.9));
+    brightness(1.4)
+    drop-shadow(0 0 15px rgba(0,255,120,.8));
 }
