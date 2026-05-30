@@ -1,70 +1,149 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Controller Studio</title>
 
 <style>
+
 body{
+    margin:0;
     background:#111;
     color:white;
-    font-family:sans-serif;
+    font-family:Arial,sans-serif;
     text-align:center;
-    margin:0;
-    padding:20px;
 }
 
-.card{
-    background:#222;
-    border-radius:20px;
-    padding:20px;
-    margin:20px auto;
-    max-width:500px;
+h1{
+    margin-top:20px;
 }
 
-button{
+#controller{
+    position:relative;
+    width:95vw;
+    max-width:900px;
+    margin:auto;
+}
+
+#skin{
     width:100%;
-    padding:15px;
-    border:none;
-    border-radius:10px;
-    font-size:18px;
-    margin-top:10px;
+    display:block;
 }
 
-img{
-    width:100%;
-    border-radius:15px;
+.button{
+    position:absolute;
+    border-radius:50%;
+    transition:.08s;
 }
+
+.active{
+    box-shadow:0 0 25px lime;
+    transform:scale(0.9);
+}
+
+/* BOTONES PS5 */
+
+.cross{
+    width:5%;
+    height:5%;
+    right:19%;
+    top:36%;
+}
+
+.circle{
+    width:5%;
+    height:5%;
+    right:13%;
+    top:30%;
+}
+
+.square{
+    width:5%;
+    height:5%;
+    right:25%;
+    top:30%;
+}
+
+.triangle{
+    width:5%;
+    height:5%;
+    right:19%;
+    top:24%;
+}
+
+/* STICKS */
+
+.stick{
+    position:absolute;
+    width:10%;
+    height:10%;
+    border-radius:50%;
+}
+
+.left-stick{
+    left:23%;
+    top:50%;
+}
+
+.right-stick{
+    right:23%;
+    top:50%;
+}
+
 </style>
 </head>
 <body>
 
 <h1>🎮 Controller Studio</h1>
 
-<div class="card">
-<img src="ferrari.png">
+<div id="controller">
 
-<h2>Ferrari Edition</h2>
+<img id="skin" src="zoro.png">
 
-<button onclick="window.open(
-'https://gamepadviewer.com/?p=1&s=5&editcss=https://aleeexrl.github.io/gamepadstest/ferrari.css'
-)">
-Abrir Ferrari
-</button>
+<div class="button cross" id="b0"></div>
+<div class="button circle" id="b1"></div>
+<div class="button square" id="b2"></div>
+<div class="button triangle" id="b3"></div>
+
+<div class="stick left-stick"></div>
+<div class="stick right-stick"></div>
+
 </div>
 
-<div class="card">
-<img src="zoro.png">
+<script>
 
-<h2>Zoro Edition</h2>
+function updateGamepad(){
 
-<button onclick="window.open(
-'https://gamepadviewer.com/?p=1&s=5&editcss=https://aleeexrl.github.io/gamepadstest/zoro.css'
-)">
-Abrir Zoro
-</button>
-</div>
+const gp=navigator.getGamepads()[0];
+
+if(!gp){
+requestAnimationFrame(updateGamepad);
+return;
+}
+
+document.getElementById("b0")
+.classList.toggle("active",gp.buttons[0].pressed);
+
+document.getElementById("b1")
+.classList.toggle("active",gp.buttons[1].pressed);
+
+document.getElementById("b2")
+.classList.toggle("active",gp.buttons[2].pressed);
+
+document.getElementById("b3")
+.classList.toggle("active",gp.buttons[3].pressed);
+
+requestAnimationFrame(updateGamepad);
+}
+
+window.addEventListener(
+"gamepadconnected",
+()=>updateGamepad()
+);
+
+</script>
 
 </body>
 </html>
