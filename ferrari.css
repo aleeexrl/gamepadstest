@@ -1,0 +1,68 @@
+/* =========================
+   FERRARI PS5 OVERLAY
+   ========================= */
+
+.controller.custom,
+.controller.edit {
+    background-image:
+        url("https://i.imgur.com/YOUR_CONTROLLER_BASE.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* BODY */
+
+.controller.edit {
+    filter:
+        drop-shadow(0 0 20px rgba(255,0,0,.35));
+}
+
+/* TRACKPAD */
+
+.touchpad.pressed {
+    background: rgba(255,255,255,.08);
+}
+
+/* JOYSTICKS */
+
+.stick {
+    filter:
+        drop-shadow(0 0 12px rgba(255,0,0,.6))
+        saturate(1.2);
+}
+
+/* BUTTONS */
+
+.button {
+    transition: all .05s linear;
+}
+
+.button.pressed {
+    transform: scale(.92);
+    filter:
+        brightness(1.4)
+        drop-shadow(0 0 10px rgba(255,230,0,.9));
+}
+
+/* DPAD */
+
+.dpad .pressed {
+    filter:
+        brightness(1.5)
+        drop-shadow(0 0 12px rgba(255,0,0,.9));
+}
+
+/* TRIGGERS */
+
+.trigger-button.pressed {
+    filter:
+        brightness(1.4)
+        drop-shadow(0 0 15px rgba(255,0,0,.8));
+}
+
+/* PS BUTTON */
+
+.meta.pressed {
+    filter:
+        drop-shadow(0 0 15px rgba(255,255,255,.9));
+}
