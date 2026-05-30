@@ -4,24 +4,22 @@
 
 .controller.custom,
 .controller.edit {
-    background-image:
-        url("https://i.imgur.com/YOUR_ZORO_CONTROLLER.png");
-    background-size: contain;
-    background-repeat: no-repeat;
+    background-image: url("https://aleeexrl.github.io/gamepadstest/zoro.png") !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
 }
 
 /* GREEN GLOW */
 
 .controller.edit {
-    filter:
-        drop-shadow(0 0 18px rgba(0,255,120,.25));
+    filter: drop-shadow(0 0 18px rgba(0,255,120,.25));
 }
 
 /* JOYSTICKS */
 
 .stick {
-    filter:
-        drop-shadow(0 0 10px rgba(0,255,100,.55));
+    filter: drop-shadow(0 0 10px rgba(0,255,100,.55));
 }
 
 /* BUTTONS */
